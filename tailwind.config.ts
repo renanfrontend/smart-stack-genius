@@ -1,5 +1,6 @@
 
 import type { Config } from "tailwindcss";
+import typographyPlugin from "@tailwindcss/typography";
 
 export default {
 	darkMode: ["class"],
@@ -120,7 +121,53 @@ export default {
         'auto-100%': 'auto 100%',
         '200%': '200% 200%',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'hsl(var(--foreground))',
+            a: {
+              color: 'hsl(var(--primary))',
+              '&:hover': {
+                color: 'hsl(var(--primary))',
+              },
+            },
+            h1: {
+              color: 'hsl(var(--foreground))',
+            },
+            h2: {
+              color: 'hsl(var(--foreground))',
+            },
+            h3: {
+              color: 'hsl(var(--foreground))',
+            },
+            h4: {
+              color: 'hsl(var(--foreground))',
+            },
+            blockquote: {
+              color: 'hsl(var(--foreground))',
+              borderLeftColor: 'hsl(var(--border))',
+            },
+            'strong, b': {
+              color: 'hsl(var(--foreground))',
+            },
+            code: {
+              color: 'hsl(var(--foreground))',
+              backgroundColor: 'hsl(var(--secondary))',
+              borderRadius: '0.25rem',
+              padding: '0.25rem',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              borderRadius: 0,
+              padding: 0,
+            },
+          },
+        },
+      },
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+    require("tailwindcss-animate"),
+    typographyPlugin
+  ],
 } satisfies Config;

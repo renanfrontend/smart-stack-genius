@@ -7,38 +7,6 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222 89% 53%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 215 25% 95%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 220 14% 46%;
-
-    --accent: 226 70% 75%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222 89% 53%;
-
-    --radius: 0.8rem;
-  }
-
-  .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -66,6 +34,8 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
+
+    --radius: 0.8rem;
   }
 }
 
@@ -86,18 +56,18 @@
 
 /* Custom glass effect */
 .glass {
-  @apply bg-white/70 dark:bg-black/70 backdrop-blur-md;
+  @apply bg-black/70 dark:bg-black/70 backdrop-blur-md;
   border: 1px solid rgba(255, 255, 255, 0.125);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 .glass-card {
-  @apply bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-md;
+  @apply bg-black/80 dark:bg-black/80 backdrop-blur-md rounded-2xl shadow-md;
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .glass-input {
-  @apply bg-white/50 dark:bg-black/50 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50;
+  @apply bg-black/50 dark:bg-black/50 backdrop-blur-sm rounded-xl border border-gray-700/50;
 }
 
 /* Smooth transitions */
@@ -128,5 +98,5 @@
 
 /* Gradient text */
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-accent bg-200% animate-gradient-shift;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 bg-200% animate-gradient-shift;
 }
