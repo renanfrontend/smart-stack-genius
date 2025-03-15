@@ -55,7 +55,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Type your message..."
+          placeholder="Digite sua mensagem..."
           disabled={isDisabled}
           rows={1}
           className={cn(

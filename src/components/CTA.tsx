@@ -11,11 +11,11 @@ const CTA: React.FC = () => {
       <Container className="relative">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Experience the future of AI assistance
+            Experimente o futuro da assistência com IA
           </h2>
           
           <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-            Enhance your productivity with our intelligent AI agent. Start a conversation now and discover how it can transform your workflow.
+            Aumente sua produtividade com nosso assistente de IA inteligente. Inicie uma conversa agora e descubra como ele pode transformar seu fluxo de trabalho.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -23,7 +23,7 @@ const CTA: React.FC = () => {
               to="/chat"
               className="relative overflow-hidden group w-full sm:w-auto px-6 py-3 rounded-lg bg-primary text-primary-foreground text-base font-medium tracking-tight shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
             >
-              <span className="relative z-10">Start Chatting</span>
+              <span className="relative z-10">Iniciar Conversa</span>
               <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
             </Link>
             
@@ -31,7 +31,7 @@ const CTA: React.FC = () => {
               href="#features"
               className="w-full sm:w-auto px-6 py-3 rounded-lg border border-foreground/20 bg-background/50 text-foreground text-base font-medium tracking-tight transition-all duration-300 hover:bg-foreground/5 active:scale-[0.98]"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>

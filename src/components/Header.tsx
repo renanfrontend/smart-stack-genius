@@ -28,18 +28,22 @@ const Header: React.FC = () => {
           to="/" 
           className="text-xl font-medium tracking-tight transition-opacity duration-300 hover:opacity-80"
         >
-          <span className="text-gradient font-semibold">AI</span>
-          <span className="ml-1">Agent</span>
+          <span className="text-gradient font-semibold">Genius</span>
+          <span className="ml-1">AI</span>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8">
-          {['Features', 'How It Works', 'About'].map((item) => (
+          {[
+            { name: 'Recursos', href: 'features' },
+            { name: 'Como Funciona', href: 'how-it-works' },
+            { name: 'Sobre', href: 'about' }
+          ].map((item) => (
             <a 
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+              key={item.name}
+              href={`#${item.href}`}
               className="text-sm text-foreground/80 font-medium transition-all duration-300 hover:text-foreground"
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
@@ -49,7 +53,7 @@ const Header: React.FC = () => {
             to="/chat"
             className="relative overflow-hidden group px-5 py-2.5 rounded-lg bg-primary text-primary-foreground text-sm font-medium tracking-tight shadow-sm transition-all duration-300 hover:shadow-md hover:brightness-110 active:scale-[0.98]"
           >
-            <span className="relative z-10">Try AI Chat</span>
+            <span className="relative z-10">Experimentar Chat</span>
             <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
           </Link>
         </div>

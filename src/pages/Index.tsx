@@ -11,7 +11,7 @@ import useTypingEffect from '@/hooks/useTypingEffect';
 
 const Index = () => {
   const { displayedText } = useTypingEffect({
-    text: "Intelligent assistant powered by AI",
+    text: "Assistente inteligente desenvolvido pela Up Technology Innovations",
     speed: 50,
     delay: 500
   });
@@ -55,13 +55,13 @@ const Index = () => {
         <Container>
           <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
             <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-brand-light text-brand rounded-full mb-8 animate-fade-in">
-              Cutting-edge AI Technology
+              Tecnologia de IA de Ponta
             </span>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 animate-fade-in-down">
-              <span>Your Personalized</span>
+              <span>Seu Assistente</span>
               <br />
-              <span className="text-gradient font-extrabold">AI Agent</span>
+              <span className="text-gradient font-extrabold">Genius AI</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 min-h-[2em] animate-fade-in">
@@ -73,7 +73,7 @@ const Index = () => {
                 to="/chat"
                 className="relative overflow-hidden group px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
               >
-                <span className="relative z-10">Try AI Chat</span>
+                <span className="relative z-10">Experimentar Chat</span>
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
               </Link>
               
@@ -81,7 +81,7 @@ const Index = () => {
                 href="#features"
                 className="px-6 py-3 rounded-lg border border-foreground/20 bg-background/50 text-foreground font-medium transition-all duration-300 hover:bg-foreground/5 active:scale-[0.98]"
               >
-                Learn More
+                Saiba Mais
               </a>
             </div>
             
@@ -97,26 +97,26 @@ const Index = () => {
         <Container>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 animate-on-scroll">
-              Intelligent Features
+              Recursos Inteligentes
             </h2>
             <p className="text-lg text-foreground/80 animate-on-scroll">
-              Our AI agent comes with a variety of powerful features designed to enhance your productivity and simplify your workflow.
+              Nosso assistente Genius AI vem com uma variedade de recursos poderosos projetados para aumentar sua produtividade e simplificar seu fluxo de trabalho.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Natural Conversations",
-                description: "Engage in fluid, human-like conversations with our advanced language processing."
+                title: "Conversas Naturais",
+                description: "Participe de conversas fluidas, semelhantes às humanas, com nosso processamento avançado de linguagem."
               },
               {
-                title: "Task Automation",
-                description: "Let the AI handle repetitive tasks while you focus on what matters most."
+                title: "Automação de Tarefas",
+                description: "Deixe a IA lidar com tarefas repetitivas enquanto você se concentra no que é mais importante."
               },
               {
-                title: "Smart Assistance",
-                description: "Get personalized recommendations and assistance based on your preferences."
+                title: "Assistência Inteligente",
+                description: "Obtenha recomendações personalizadas e assistência com base em suas preferências."
               }
             ].map((feature, index) => (
               <div 
@@ -153,10 +153,10 @@ const Index = () => {
         <Container>
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 animate-on-scroll">
-              How It Works
+              Como Funciona
             </h2>
             <p className="text-lg text-foreground/80 animate-on-scroll">
-              Our AI agent processes your requests intelligently to provide the most helpful responses.
+              Nosso assistente Genius AI processa suas solicitações de forma inteligente para fornecer as respostas mais úteis.
             </p>
           </div>
           
@@ -165,16 +165,16 @@ const Index = () => {
             
             {[
               {
-                title: "Input Your Request",
-                description: "Start a conversation with the AI by typing your question or request in natural language."
+                title: "Insira Sua Solicitação",
+                description: "Inicie uma conversa com a IA digitando sua pergunta ou solicitação em linguagem natural."
               },
               {
-                title: "Processing & Analysis",
-                description: "Our advanced AI processes your input, analyzing context and intent to generate the most relevant response."
+                title: "Processamento e Análise",
+                description: "Nossa IA avançada processa sua entrada, analisando contexto e intenção para gerar a resposta mais relevante."
               },
               {
-                title: "Intelligent Response",
-                description: "Receive a thoughtful, helpful response tailored to your specific needs and continue the conversation."
+                title: "Resposta Inteligente",
+                description: "Receba uma resposta refletida e útil, adaptada às suas necessidades específicas, e continue a conversa."
               }
             ].map((step, index) => (
               <div 
@@ -214,20 +214,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 animate-on-scroll">
-                About AI Agent
+                Sobre o Genius AI
               </h2>
               <p className="text-lg text-foreground/80 mb-6 animate-on-scroll">
-                Our AI Agent is designed with a focus on simplicity, elegance, and functionality. We've crafted an intuitive experience that feels natural and responsive.
+                Nosso Genius AI foi projetado com foco em simplicidade, elegância e funcionalidade. Criamos uma experiência intuitiva que se sente natural e responsiva.
               </p>
               <p className="text-lg text-foreground/80 mb-6 animate-on-scroll">
-                With state-of-the-art natural language processing, our AI understands context and provides relevant, helpful responses to your queries.
+                Com processamento de linguagem natural de última geração, nossa IA entende o contexto e fornece respostas relevantes e úteis às suas consultas.
               </p>
               <div className="animate-on-scroll">
                 <Link
                   to="/chat"
                   className="relative overflow-hidden group inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium shadow-md transition-all duration-300 hover:shadow-lg hover:brightness-110 active:scale-[0.98]"
                 >
-                  <span className="relative z-10">Start Chatting</span>
+                  <span className="relative z-10">Iniciar Conversa</span>
                   <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
                 </Link>
               </div>
@@ -248,11 +248,11 @@ const Index = () => {
         <Container>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-foreground/70 mb-4 md:mb-0">
-              © {new Date().getFullYear()} AI Agent. All rights reserved.
+              © {new Date().getFullYear()} Genius AI - Desenvolvido pela Up Technology Innovations. Todos os direitos reservados.
             </p>
             
             <div className="flex items-center space-x-6">
-              {['Privacy', 'Terms', 'Contact'].map((item) => (
+              {['Privacidade', 'Termos', 'Contato'].map((item) => (
                 <a 
                   key={item}
                   href="#"
