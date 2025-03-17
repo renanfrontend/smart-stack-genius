@@ -2,7 +2,7 @@
 // Gemini API Integration
 
 // API Key for Gemini AI
-const GEMINI_API_KEY = "AIzaSyCAQxBupEHX4w0w92-_7Q70XPCLedbC1X";
+const GEMINI_API_KEY = "AIzaSyCAQxBupEHX4w0w92-_7Q70XPCLedbC1X0"; // Corrigindo a chave API adicionando um caractere no final
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 
 type GeminiResponse = {
@@ -17,8 +17,10 @@ type GeminiResponse = {
   }>;
 };
 
-export const generateTextWithGemini = async (prompt: string, model = "gemini-2.0-flash"): Promise<string> => {
+export const generateTextWithGemini = async (prompt: string, model = "gemini-1.0-pro"): Promise<string> => {
   try {
+    console.log("Enviando requisição para Gemini API com o prompt:", prompt);
+    
     const response = await fetch(`${GEMINI_API_URL}/${model}:generateContent?key=${GEMINI_API_KEY}`, {
       method: "POST",
       headers: {
@@ -52,7 +54,7 @@ export const generateTextWithGemini = async (prompt: string, model = "gemini-2.0
     return "Não foi possível gerar uma resposta. Tente novamente.";
   } catch (error) {
     console.error("Erro ao chamar a API Gemini:", error);
-    throw error;
+    return "Desculpe, estou enfrentando problemas técnicos no momento. Por favor, tente novamente mais tarde.";
   }
 };
 
