@@ -2,7 +2,7 @@
 // Gemini API Integration
 
 // API Key for Gemini AI
-const GEMINI_API_KEY = "AIzaSyCAQxBupEHX4w0w92-_7Q70XPCLedbC1X0"; // Corrigindo a chave API adicionando um caractere no final
+const GEMINI_API_KEY = "AIzaSyCgIFDs0BUGeQnVQdqFTKeUyUSaBopqkr4"; // Atualizando para a nova chave API
 const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models";
 
 type GeminiResponse = {
