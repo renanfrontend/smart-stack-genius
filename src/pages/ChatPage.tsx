@@ -20,7 +20,8 @@ const ChatPage = () => {
             <span className="ml-1">Inteligente</span>
           </Link>
           
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
+            <span className="text-xs font-medium text-foreground/60">Powered by Gemini AI</span>
             <Link
               to="/"
               className="text-sm font-medium hover:text-primary transition-colors duration-200"

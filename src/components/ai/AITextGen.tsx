@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -6,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import { toast } from 'sonner';
+import { generateTextWithGemini } from '@/lib/gemini';
 
 const AITextGen = () => {
   const [prompt, setPrompt] = useState('');
@@ -24,18 +24,51 @@ const AITextGen = () => {
     setLoading(true);
     
     try {
-      // Simulando geração de texto
-      setTimeout(() => {
-        const placeholder = `# ${prompt}\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc sit amet ultricies ultricies, nisl nisl tincidunt nisl, eget ultricies nisl nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nisl nisl tincidunt nisl, eget ultricies nisl nisl sit amet nunc.\n\n## Seção 1\n\nNullam eget ultricies nisl nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nisl nisl tincidunt nisl, eget ultricies nisl nisl sit amet nunc. Sed euismod, nunc sit amet ultricies ultricies, nisl nisl tincidunt nisl, eget ultricies nisl nisl sit amet nunc.\n\n## Seção 2\n\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.`;
+      // Prepare a detailed prompt for Gemini
+      const detailedPrompt = `
+        Gere um ${getTypeText(type)} ${getLengthText(length)}.
         
-        setGeneratedText(placeholder);
-        setLoading(false);
-        toast.success('Texto gerado com sucesso!');
-      }, 3000);
+        Tópico ou assunto: ${prompt}
+        
+        Instruções adicionais:
+        - Nível de criatividade: ${creativity[0] * 100}%
+        - Estruture o texto de forma clara e coesa
+        - Use linguagem adequada ao contexto
+        - Inclua parágrafos, seções e subtítulos onde apropriado
+        - Seja informativo e envolvente
+      `;
+      
+      const result = await generateTextWithGemini(detailedPrompt);
+      setGeneratedText(result);
+      toast.success('Texto gerado com sucesso!');
     } catch (error) {
+      console.error('Erro ao gerar texto:', error);
       toast.error('Erro ao gerar texto. Tente novamente.');
+    } finally {
       setLoading(false);
     }
+  };
+  
+  const getTypeText = (type: string): string => {
+    const types: Record<string, string> = {
+      'article': 'artigo',
+      'essay': 'redação',
+      'blog': 'postagem de blog',
+      'story': 'história',
+      'email': 'e-mail',
+      'resume': 'currículo'
+    };
+    return types[type] || type;
+  };
+  
+  const getLengthText = (length: string): string => {
+    const lengths: Record<string, string> = {
+      'short': 'curto (aproximadamente 150 palavras)',
+      'medium': 'médio (aproximadamente 300 palavras)',
+      'long': 'longo (aproximadamente 600 palavras)',
+      'xl': 'muito longo (aproximadamente 1000+ palavras)'
+    };
+    return lengths[length] || length;
   };
   
   return (

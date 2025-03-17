@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import ChatMessage, { ChatMessageProps } from './ChatMessage';
 import ChatInput from './ChatInput';
@@ -8,6 +7,8 @@ import { TabsContent, Tabs, TabsList, TabsTrigger } from '../ui/tabs';
 import AIImageGen from '../ai/AIImageGen';
 import AITextGen from '../ai/AITextGen';
 import AIMusicGen from '../ai/AIMusicGen';
+import { generateTextWithGemini } from '@/lib/gemini';
+import { toast } from 'sonner';
 
 interface ChatInterfaceProps {
   className?: string;
@@ -32,30 +33,23 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
     setMessages(prev => [...prev, userMessage]);
     setIsLoading(true);
     
-    // Simulate API delay
-    setTimeout(() => {
+    try {
+      // Generate response using Gemini API
+      const aiResponseText = await generateTextWithGemini(content);
+      
       // Add AI response
       const aiResponse: ChatMessageProps = {
-        content: getAIResponse(content),
+        content: aiResponseText,
         role: 'assistant'
       };
       
       setMessages(prev => [...prev, aiResponse]);
+    } catch (error) {
+      console.error("Erro ao processar mensagem:", error);
+      toast.error("Erro ao gerar resposta. Tente novamente.");
+    } finally {
       setIsLoading(false);
-    }, 1500);
-  };
-  
-  // Simple AI response generation
-  const getAIResponse = (userMessage: string): string => {
-    const responses = [
-      "Entendo sua solicitação e estou aqui para ajudar. Poderia fornecer mais detalhes?",
-      "Obrigado por sua mensagem. Estou processando sua solicitação e vou ajudá-lo em breve.",
-      "Estou analisando sua entrada. Pode elaborar mais para que eu possa fornecer uma resposta mais específica?",
-      "Processei sua solicitação e estou pronto para ajudá-lo com sua tarefa.",
-      `Vejo que você mencionou "${userMessage.split(' ').slice(0, 3).join(' ')}...". Posso ajudar com isso.`
-    ];
-    
-    return responses[Math.floor(Math.random() * responses.length)];
+    }
   };
 
   return (
